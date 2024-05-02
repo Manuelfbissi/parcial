@@ -1,5 +1,4 @@
 import mongoose from "mongoose"
-
 // schema
 const personajeSchema = new mongoose.Schema({
     nombre: {

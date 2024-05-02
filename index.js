@@ -1,8 +1,8 @@
 import express from "express"
 import mongoose from "mongoose"
 import "dotenv/config"
-import user_routes from "./routes/personaje_routes.js"
-
+import personajes_routes from "./routes/personaje_routes.js"
+import caracteristicas_routes from "./routes/caracteristicas_routes.js"
 // mongodb://127.0.0.1:27017/cursos
 mongoose
 .connect ("mongodb://127.0.0.1:27017/personajes_rickAndMorty")
@@ -13,7 +13,8 @@ mongoose
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use("/personajes", user_routes)
+app.use("/personajes", personajes_routes)
+app.use("/caracteristicas", caracteristicas_routes)
 
 
 const port = process.env.PORT || 3002

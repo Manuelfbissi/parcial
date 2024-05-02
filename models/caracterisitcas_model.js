@@ -1,20 +1,22 @@
 import mongoose from "mongoose"
+const Schema = mongoose.Schema;
+
 
 const caracteristicasSchema = new mongoose.Schema({
 
     datos_personaje: {
-        type: Schema.Types.ObjectId, ref: 'personajes'
+        type: Schema.Types.ObjectId, ref: 'personaje'
     },
-
-    Especie: {
+   
+    especie: {
         type: String,
         required: true
     },
-    Planeta_origen: {
+    planeta_origen: {
         type: String,
         required: true
     },
-    Debut : {
+    debut : {
         type: String,
         required: true
     },
