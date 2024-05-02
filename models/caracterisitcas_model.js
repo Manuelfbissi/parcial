@@ -30,3 +30,5 @@ const caracteristicasSchema = new mongoose.Schema({
 })
 
 export default mongoose.model("caracteristicas", caracteristicasSchema)
+
+//prueba
