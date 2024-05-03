@@ -1,10 +1,10 @@
 import express from "express"
 import { getPersonaje, createPersonaje, updatePersonaje, deletePersonaje } from "../controllers/personaje_controller.js"
-
+import autenticacionService from '../services/autenticacionService.js'
 const ruta = express.Router();
 
 // GET para obtener todos los usuarios
-ruta.get("/", (req, res) => {
+ruta.get("/", autenticacionService.verificarToken,(req, res) => {
     let resultado = getPersonaje();
     resultado
         .then((users) => { res.status(200).json(users) })
