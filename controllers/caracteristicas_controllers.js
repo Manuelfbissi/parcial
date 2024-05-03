@@ -18,4 +18,14 @@ async function createCaracteristicas(req){
     })
     return await caracteristicasNuevo.save()
 }
-export {getCaracteristicas,createCaracteristicas }
+
+async function updateCaracteristicas(id, body){
+    let caracteristicasActualizadas = await Caracteristicas.findByIdAndUpdate(id, {
+        $set: {
+            especie: body.especie,
+            planeta_origen: body.planeta_origen
+        }
+    }, {new: true})
+    return caracteristicasActualizadas;
+}
+export {getCaracteristicas,createCaracteristicas,updateCaracteristicas }

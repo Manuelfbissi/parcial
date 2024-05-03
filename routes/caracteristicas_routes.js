@@ -1,5 +1,5 @@
 import express from "express"
-import { getCaracteristicas,createCaracteristicas  } from "../controllers/caracteristicas_controllers.js"
+import { getCaracteristicas,createCaracteristicas,updateCaracteristicas  } from "../controllers/caracteristicas_controllers.js"
 const ruta = express.Router();
 
 
@@ -19,6 +19,15 @@ ruta.post("/:id", (req, res) => {
         .catch((error) => { res.status(400).json(error) })
 })
 
+
+
+ruta.put("/:id", (req, res) => {
+    let body = req.body;
+    let resultado = updateCaracteristicas(req.params.id, body);
+    resultado
+        .then((user) => { res.status(201).json(user) })
+        .catch((error) => { res.status(400).json(error) })
+})
 
 
 export default ruta;

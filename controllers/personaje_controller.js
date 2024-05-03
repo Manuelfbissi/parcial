@@ -23,7 +23,7 @@ async function updatePersonaje(id, body){
             { $set: { 
                 nombre: body.nombre,
                 apellido: body.apellido,
-                edad: body.edad
+               
             }}
         );
         return personaje;
