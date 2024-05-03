@@ -1,5 +1,5 @@
 import express from "express"
-import { getCaracteristicas,createCaracteristicas,updateCaracteristicas  } from "../controllers/caracteristicas_controllers.js"
+import { getCaracteristicas,createCaracteristicas,updateCaracteristicas,deactivarCaracteristicas  } from "../controllers/caracteristicas_controllers.js"
 const ruta = express.Router();
 
 
@@ -25,7 +25,16 @@ ruta.put("/:id", (req, res) => {
     let body = req.body;
     let resultado = updateCaracteristicas(req.params.id, body);
     resultado
-        .then((user) => { res.status(201).json(user) })
+        .then((car) => { res.status(201).json(car) })
+        .catch((error) => { res.status(400).json(error) })
+})
+
+
+ruta.delete("/:id", (req, res) => {
+    let body = req.body;
+    let resultado = deactivarCaracteristicas(req.params.id, body);
+    resultado
+        .then((car) => { res.status(201).json(car) })
         .catch((error) => { res.status(400).json(error) })
 })
 

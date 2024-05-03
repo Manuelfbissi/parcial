@@ -28,4 +28,13 @@ async function updateCaracteristicas(id, body){
     }, {new: true})
     return caracteristicasActualizadas;
 }
-export {getCaracteristicas,createCaracteristicas,updateCaracteristicas }
+
+async function deactivarCaracteristicas(id){
+    let caracteristicasDesactivadas = await Caracteristicas.findByIdAndUpdate(id, {
+        $set: {
+            estado: false
+        }
+    }, {new: true})
+    return caracteristicasDesactivadas;
+}
+export {getCaracteristicas,createCaracteristicas,updateCaracteristicas,deactivarCaracteristicas }
