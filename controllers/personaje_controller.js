@@ -29,21 +29,35 @@ async function createPersonaje(body) {
     }
   }
 
-async function updatePersonaje(id, body){
+  async function updatePersonaje(id, body) {
     try {
-        const personaje = await Personaje.updateOne(
-            { "_id": id },
-            { $set: { 
-                nombre: body.nombre,
-                apellido: body.apellido,
-               
-            }}
-        );
-        return personaje;
+      // Verificar que se proporcionen al menos uno de los campos obligatorios
+      if (!body.nombre && !body.apellido) {
+        throw new Error('Debe proporcionar al menos el nombre o el apellido para actualizar el personaje');
+      }
+  
+      // Actualizar el personaje solo con los campos proporcionados
+      const updateFields = {};
+      if (body.nombre) {
+        updateFields.nombre = body.nombre;
+      }
+      if (body.apellido) {
+        updateFields.apellido = body.apellido;
+      }
+  
+      // Realizar la actualización del personaje
+      const personaje = await Personaje.updateOne(
+        { "_id": id },
+        { $set: updateFields }
+      );
+  
+      return personaje;
     } catch (error) {
-        throw error;
+      // Manejar errores y devolver un mensaje de error
+      throw new Error(error.message);
     }
-}
+  }
+  
 
 
 
