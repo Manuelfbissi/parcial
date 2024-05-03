@@ -23,7 +23,8 @@ async function updateCaracteristicas(id, body){
     let caracteristicasActualizadas = await Caracteristicas.findByIdAndUpdate(id, {
         $set: {
             especie: body.especie,
-            planeta_origen: body.planeta_origen
+            planeta_origen: body.planeta_origen,
+            debut:body.debut
         }
     }, {new: true})
     return caracteristicasActualizadas;
