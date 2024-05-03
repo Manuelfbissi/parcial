@@ -1,4 +1,4 @@
-// autenticacionService.js
+// http://localhost:3000/personajes?token=12345
 // Simula la autenticación 
 const autenticacionService = {
     verificarToken: (req, res, next) => {
