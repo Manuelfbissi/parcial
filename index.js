@@ -18,5 +18,35 @@ app.use("/personajes", personajes_routes)
 app.use("/caracteristicas", caracteristicas_routes)
 
 
+
+// Ruta para la página principal
+app.get('/', (req, res) => {
+    res.send(`
+      <html>
+        <head>
+          <title>API de Personajes</title>
+        </head>
+        <body>
+          <h1>Bienvenido a la API de Personajes</h1>
+          <p>Esta API proporciona acceso a una colección de personajes y sus características de Rick and Morty.</p>
+          <h2>Endpoints Disponibles:</h2>
+          <ul>
+          <li><a href="/personajes?token=12345">/personajes - Obtener todos los personajes (requiere token)</a></li>
+            <li><a href="/caracteristicas">/caracteristicas - Obtener todas las características</a></li>
+          </ul>
+          <footer>
+            <p>Desarrollado por: [NOMBRE_DEL_DESARROLLADOR]</p>
+            <p>Materia: [NOMBRE_DE_LA_MATERIA]</p>
+            <p>Profesor: [NOMBRE_DEL_PROFESOR]</p>
+            <p>Comisión: [COMISIÓN]</p>
+            <p>Año: [AÑO]</p>
+          </footer>
+        </body>
+      </html>
+    `);
+  });
+  
+
+
 const port = process.env.PORT || 3002
 app.listen(port)
