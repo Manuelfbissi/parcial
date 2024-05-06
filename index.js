@@ -6,9 +6,9 @@ import caracteristicas_routes from "./routes/caracteristicas_routes.js"
 //"mongodb://127.0.0.1:27017/personajes_rickAndMorty"
 //mongodb+srv://manuelfernandez:1234@cluster0.6dqlz9l.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 mongoose
-.connect ("mongodb+srv://manuelfernandez:1234@cluster0.6dqlz9l.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+.connect(process.env.MONGO_DEPLOY )
     .then(() => console.log("conectado"))
-    .catch(() => console.log("error al conectar"))
+    .catch((error) => console.error("error al conectar", error))
 
 
 const app = express()
