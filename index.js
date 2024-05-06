@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
         </head>
         <body>
           <h1>Bienvenido a la API de Personajes</h1>
-          <p>Esta API proporciona acceso a una colección de personajes y sus características de Rick and Morty.</p>
+          <p>Esta API proporciona acceso a una colección de personajes de Rick and Morty y sus características .</p>
           <h2>Endpoints Disponibles:</h2>
           <ul>
           <li><a href="/personajes?token=12345">/personajes - Obtener todos los personajes (requiere token)</a></li>
