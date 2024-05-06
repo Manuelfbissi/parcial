@@ -35,11 +35,11 @@ app.get('/', (req, res) => {
             <li><a href="/caracteristicas">/caracteristicas - Obtener todas las características</a></li>
           </ul>
           <footer>
-            <p>Desarrollado por: [NOMBRE_DEL_DESARROLLADOR]</p>
-            <p>Materia: [NOMBRE_DE_LA_MATERIA]</p>
-            <p>Profesor: [NOMBRE_DEL_PROFESOR]</p>
-            <p>Comisión: [COMISIÓN]</p>
-            <p>Año: [AÑO]</p>
+            <p>Desarrollado por: Fernandez Bissi Manuel</p>
+            <p>Materia: Aplicaciones Hibridas</p>
+            <p>Profesora: Camila Marcos Galban</p>
+            <p>Comisión: DWN4AV</p>
+            
           </footer>
         </body>
       </html>
